@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가꿈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Dongle', sans-serif;
+            font-size: 30px;
+}</style>
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -28,13 +36,23 @@
   
  .format { display: none; }
  
+ #x-icon{
+            text-align: center;
+            left: 90%;
+            top: 20px;
+            position: fixed;
+ }
+ 
 
 </style>
 
 <body>
 <div class="chat_wrap">
-    <div class="header">
-        가꿈_CHATTING
+    <div class="header" style="font-size: 30px;">
+       가꿈의 CHATTING
+       <div id="x-icon" onclick="x_button()">
+           <img src="../image/myhome/xicon.png">
+       </div>
     </div>
     <div class="chat">
         <ul>
@@ -62,6 +80,9 @@
 </div>
 
 <script>
+    function x_button(){
+        history.back(-1)();
+    }
 
 const Chat = (function(){
     const myName = "day";

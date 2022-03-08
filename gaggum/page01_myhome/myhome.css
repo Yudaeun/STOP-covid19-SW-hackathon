@@ -1,0 +1,129 @@
+* {
+    font-family: 'Dongle', sans-serif;
+}
+body {
+    background-image: url('../image/myhome/myhome.svg');
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#total-menu-icon{
+    text-align: center;
+    top: 750px;
+    position: relative;
+    
+}
+.ticket-icon{
+    text-align: center;
+    left: 75%;
+    top: 50px;
+    position: fixed;
+    color: #fff;
+}
+#myhome-menu-icon{
+    text-align: center;
+    left:8%;
+    top: 70px;
+    position: fixed;
+
+}
+#myhome-chatting-icon{
+    text-align: center;
+    left:8%;
+    top: 105px;
+    position: fixed;
+    display:flex;
+}
+.modal {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+     display: none; 
+     background-color: rgba(0, 0, 0, 0.4);
+
+
+}
+.menu_modal {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+     display: none; 
+     background-color: rgba(0, 0, 0, 0.4);
+
+
+}
+
+.modal_body { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    width: 230px; 
+    height: 480px; 
+     padding: 40px; 
+     text-align: center; 
+     background-color: #F9B7BF; 
+     border-radius: 40px; 
+     box-shadow: inset 0px 0px 10px 5px rgba(34, 36, 38, 0.15); 
+     transform: translateX(-50%) translateY(-50%); 
+    }
+    .menu_modal_body { 
+    position: fixed; 
+    top: 50%; 
+    left: 19%;
+    width: 230px; 
+    height: 92%; 
+     padding: 40px; 
+     text-align: center; 
+     background-color: #ffffff; 
+     border-radius: 30px; 
+     
+     transform: translateX(-50%) translateY(-50%); 
+    }
+    #x-icon{
+    text-align: center;
+    left: 87%;
+    top: 29px;
+    position: fixed;
+    }
+    #friend-icon{
+    text-align: center;
+    left:14%;
+    top: 255px;
+    position: fixed;
+}
+#myhome-icon{
+    text-align: center;
+    left:18%;
+    top: 85px;
+    position: fixed;
+}
+#setting-icon{
+    text-align: center;
+    left:55%;
+    top: 255px;
+    position: fixed;
+}
+#dm-icon{
+    text-align: center;
+    left:53%;
+    top: 71px;
+    position: fixed;
+}
+#art-btn{
+    text-align: center;
+    left:14%;
+    top: 425px;
+    position: fixed;
+    
+}
+#menu-widget{
+    text-align: left ;
+    left:35%;
+    top: 107px;
+    position: fixed;
+}
