@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="../page01_myhome/myhome.css" rel="stylesheet" type="text/css" />
+    <link href="livestreet.css" rel="stylesheet" type="text/css" />
+
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가꿈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gothic+A1&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<style>
+    body {
+    background-image: url('../image/livestreet/Nebula.png');
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+<body>
+    <div class="ticket-icon" style=" float: left;">
+        <img src="../image/Ticket.png"> 
+        <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
+        <div style="float: right; left: 14px; position: fixed; top: 50px " onclick="back()">
+            <img src="../image/art/back.png">
+        </div>
+        <div class="modal">
+            <div class="modal_body">
+            <div class="close-area" id="x-icon">
+            <img src="../image/myhome/xicon.png">
+            <div id="myhome-icon" onclick="myhome_link()">
+            <img src="../image/myhome/Home.png">
+            </div>
+            <div id="friend-icon" onclick="friend_link()">
+            <img src="../image/myhome/friend.png">
+            </div>
+            <div id="setting-icon" onclick="setting_link()">
+            <img src="../image/myhome/setting.png">
+            </div>
+            <div id="dm-icon" onclick="dm_link()">
+            <img src="../image/myhome/DM.png">
+            </div>
+            <div id="art-btn" onclick="art_btn_link()">
+            <img src="../image/myhome/art_btn.png">
+            </div>
+            </div>
+            </div>
+    </div>
+    <div class="btn-open-modal" id="total-menu-icon" >
+    <img src="../image/total_menu_icon.png" alt="">
+    </div>
+
+    <div class="artist_modal">
+        <div class="artist_modal_body">
+            <div style="top: 25px; right: 7%; text-align: center; position: fixed;">
+                <img src="../image/livestreet/thumbnail2.png" style="width: 300px; border-radius: 10px;" >
+                <div style="font-size: 21px;">
+                <br><img src="../image/livestreet/korea.png"  style="width: 25px; height: 25px; "><br>아티스트 데이
+                </div>
+                <br>
+
+                <div style="font-size: 14px; color: rgb(141, 141, 141);">
+                    많이 보러 와주세요~♥ </div>
+                    <div style="font-size: 14px; color: #F9779D;">
+                        #기타 #풀밭 #솔로곡 
+                    </div>
+            </div>
+            
+            <div id="enter-btn" onclick="enter_link()">
+                <img src="../image/livestreet/Positive.png">
+                
+            </div>
+
+            </div></div>
+            <div class="artist_modal1">
+                <div class="artist_modal_body1">
+                    <div style="top: 25px; right: 7%; text-align: center; position: fixed;">
+                        <img src="../image/livestreet/thumbnail.png" style="width: 300px; border-radius: 10px;" >
+                        <div style="font-size: 21px;">
+                        <br><img src="../image/livestreet/japan.png"  style="width: 25px; height: 25px; "><br>아티스트 멈멈미
+                        </div>
+                        <br>
+        
+                        <div style="font-size: 14px; color: rgb(141, 141, 141);">
+                            경쾌한 사운드로 지루함을 날릴 수 있도록. </div>
+                            <div style="font-size: 14px; color: #F9779D;">
+                                #기타 #드럼 #재즈 
+                            </div>
+                    </div>
+                    
+                    <div id="enter-btn" onclick="enter_link()">
+                        <img src="../image/livestreet/Positive.png">
+                        
+                    </div>
+                    </div></div>
+            
+    <header class="header" style="color: rgb(255, 255, 255); font-size: 18px;">
+        <ul>
+          <li>아시아</li>
+          <li>유럽</li>
+          <li>북아메리카</li>
+        
+          
+        </ul>
+      </header>
+      
+      <main class="main">
+        <section>
+          <div id="country1">
+              <img src="../image/livestreet/Union.png">
+              
+          </div>
+          <div class="artist-btn-modal" id="artist1" >
+            <img src="../image/livestreet/people1.png">
+        </div>
+        <div class="artist-btn-modal1" id="artist2" style="top: 500px;" >
+            <img src="../image/livestreet/people2.png">
+        </div>
+        </section>
+        <section>
+            <div id="country2">
+                <img src="../image/livestreet/Union1.png">
+            </div>
+            <div class="artist-btn-modal2" id="artist2">
+                <img src="../image/livestreet/people2.png">
+            </div>
+        </section>
+        <section>
+            <div id="country3">
+                <img src="../image/livestreet/Union3.png">
+            </div>
+        </section>  
+      </main>
+
+     
+    <script>
+        function back(){
+            history.back(-1);
+        }
+        function enter_link(){
+            location.href="";
+            //location.reload();
+        }
+        function myhome_link(){
+            location.href="../page01_myhome/index.php";
+            //location.reload();
+        }
+        function friend_link(){
+            //location.href="/";
+            location.reload();
+        }
+        function setting_link(){
+            //location.href="/";
+            location.reload();
+        }
+        function dm_link(){
+            //location.href="/";
+            location.reload();
+        }
+        function art_btn_link(){
+            location.href="../page01_myhome/location.html";
+            //location.reload();
+        }
+
+        //전체화면 모달창
+        const modal=document.querySelector(" .modal");
+        const btnOpenPopup=document.querySelector(' .btn-open-modal');
+
+        btnOpenPopup.addEventListener('click',()=>{
+            modal.style.display='block';
+        });
+
+        const closeBtn = modal.querySelector(" .close-area");
+        closeBtn.addEventListener("click", e => {
+        modal.style.display = "none"
+        });
+        modal.addEventListener("click", e => {
+        const evTarget = e.target;
+        if(evTarget.classList.contains("modal")) {
+            modal.style.display = "none"
+         }
+        });
+        
+        // 아티스트 모달창
+            const artist_modal=document.querySelector(" .artist_modal");
+        const artistbtnPopup=document.querySelector(' .artist-btn-modal');
+        artistbtnPopup.addEventListener('click',()=>{
+            artist_modal.style.display='block';
+           
+        });
+        artist_modal.addEventListener("click", e => {
+        const evnTarget = e.target;
+        if(evnTarget.classList.contains("artist_modal")) {
+            artist_modal.style.display = "none"
+         }
+        });
+        const artist_modal1=document.querySelector(" .artist_modal1");
+        const artistbtnPopup1=document.querySelector(' .artist-btn-modal1');
+        artistbtnPopup1.addEventListener('click',()=>{
+            artist_modal1.style.display='block';
+           
+        });
+        artist_modal1.addEventListener("click", e => {
+        const evnTarget = e.target;
+        if(evnTarget.classList.contains("artist_modal1")) {
+            artist_modal1.style.display = "none"
+         }
+        });
+        const artist_modal2=document.querySelector(" .artist_modal");
+        const artistbtnPopup2=document.querySelector(' .artist-btn-modal2');
+        artistbtnPopup2.addEventListener('click',()=>{
+            artist_modal2.style.display='block';
+           
+        });
+        artist_modal2.addEventListener("click", e => {
+        const evnTarget = e.target;
+        if(evnTarget.classList.contains("artist_modal")) {
+            artist_modal2.style.display = "none"
+         }
+        });
+        
+        
+        //스크롤 부드럽게 내리기
+        window.addEventListener("load", function() {
+  let elNavi = document.querySelector(".header > ul");
+  let aElSection = document.querySelectorAll(".main > section");
+  let curSIdx = 0;
+  
+  Array.from(elNavi.children, function(elMenu, idx, elMenus) {
+  	elMenu.addEventListener("click", function() {
+    	doScroll(idx);
+    });
+  });
+  
+  let wheelTimer;
+  window.addEventListener("wheel", function(e) {
+  	clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(function() {
+    	if(e.deltaY < 0) 	doScroll(++curSIdx);
+      else doScroll(--curSIdx);
+    }, 50);
+  });
+  
+  function doScroll(sidx) {
+  	sidx = sidx < 0 ? 0 : sidx;
+    sidx = sidx > aElSection.length - 1 ? aElSection.length - 1 : sidx;
+    
+    curSIdx = sidx;
+    
+    aElSection[curSIdx].scrollIntoView({
+      block: "start", inline: "start", behavior: "smooth"
+    });  	
+  }
+});
+    </script>
+</body>
+</html>

@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="myhome.css" rel="stylesheet" type="text/css" />
-<head>
+    <link href="myhome.css" rel="stylesheet" type="text/css" />
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가꿈</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gothic+A1&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
 <style>
     body {
-    background-image: url('../image/myhome/myhome.svg');
+    background-image: url('../image/myhome/location.png');
     margin: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 </style>
+
 </head>
 <body>
-<div class="menu-btn-modal" id="myhome-menu-icon">
-    <img src="../image/myhome/menu_icon.png">
-    </div>
-    <div class="menu_modal">
-        <div class="menu_modal_body" style="font-size: 20px; color: #484848; float: left;">
-            <div id="menu-widget">
-            <img src="../image/myhome/Widget.png">
-            <br><br>창고<br><br>상점<br><br>초대하기<br><br>투데이랭킹<br><br>마이홈 둘러보기
-           <br>
-           <br>&nbsp-
-           <br><br>아바타<br><br>
-           <div style="color: #F9779D;">예술인의 집</div>
-        </div>
-        </div>
-    </div>
 
-    <div id="myhome-chatting-icon" onclick="chatting()">
-    <img src="../image/myhome/chatting.png">
-    </div>
-
-<div class="ticket-icon" style=" float: left;">
+    <div class="ticket-icon" style=" float: left;">
         <img src="../image/Ticket.png"> 
         <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
 
@@ -71,14 +56,26 @@
     <div class="btn-open-modal" id="total-menu-icon" >
     <img src="../image/total_menu_icon.png" alt="">
     </div>
-    
-    
+    <div class="art-block" onclick="locate_art();" >
+        <img src="../image/myhome/artblock.png" alt="">
+        </div>
+    <div class="music-block" onclick="locate_music();" >
+        <img src="../image/myhome/musicblock.png" alt="">
+    </div>
+        <div class="artist-home-block" onclick="locate_artist_home();" >
+         <img src="../image/myhome/countryblock.png" alt="">
+        </div>
     
     <script>
-        function chatting(){
-            location.href="chatting.php";
+        function locate_art(){
+            location.href="../page06_art/";
         }
-
+        function locate_music(){
+            location.href="";
+        }
+        function locate_artist_home(){
+            alert('예술인의 집은 아티스트의 작품을 전부 모아볼 수 있는 공간입니다. 죄송하지만, 현재 예술인의 집은 서비스 준비 중입니다! 조금만 기다려주세요♪');
+        }
         function myhome_link(){
             location.href="index.php";
             //location.reload();
@@ -101,36 +98,35 @@
         }
         const modal=document.querySelector(" .modal");
         const btnOpenPopup=document.querySelector(' .btn-open-modal');
+        const artblock=document.querySelector(' .art-block');
+        const musicblock=document.querySelector(' .music-block');
+        const artisthomeblock=document.querySelector(' .artist-home-block');
 
         btnOpenPopup.addEventListener('click',()=>{
             modal.style.display='block';
+            artblock.style.display='none';
+            musicblock.style.display='none';
+            artisthomeblock.style.display='none';
         });
 
         const closeBtn = modal.querySelector(" .close-area");
         closeBtn.addEventListener("click", e => {
         modal.style.display = "none"
+        artblock.style.display='block';
+        musicblock.style.display='block';
+        artisthomeblock.style.display='block';
         });
         modal.addEventListener("click", e => {
         const evTarget = e.target;
         if(evTarget.classList.contains("modal")) {
             modal.style.display = "none"
+            artblock.style.display='block';
+            musicblock.style.display='block';
+            artisthomeblock.style.display='block';
          }
         });
 
-        const menu_modal=document.querySelector(" .menu_modal");
-        const MenubtnPopup=document.querySelector(' .menu-btn-modal');
-        const myhome_chatting_icon=document.querySelector(' #myhome-chatting-icon');
-        MenubtnPopup.addEventListener('click',()=>{
-            menu_modal.style.display='block';
-            myhome_chatting_icon.style.display="none"
-        });
-        menu_modal.addEventListener("click", e => {
-        const evnTarget = e.target;
-        if(evnTarget.classList.contains("menu_modal")) {
-            menu_modal.style.display = "none"
-            myhome_chatting_icon.style.display="block"
-         }
-        });
+      
 
 
     </script>

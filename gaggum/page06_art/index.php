@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
     <style>
         * {
-            font-family: 'Dongle', sans-serif;
+            font-family: 'Nanum Gothic', sans-serif;
 }
         body {
             background-image: url('../image/art/art_background.png');
@@ -22,7 +23,7 @@
             text-align:center;
             top:30px;
             margin-left:15px;
-            font-size: 50px;
+            font-size: 25px;
             position: fixed;
             color: #fff;
         }
@@ -47,7 +48,7 @@
         input{
             width:330px;
             height: 32px;
-            font-size: 20px;
+            font-size: 15px;
             border: 0;
             border-radius: 10px;
             outline: none;
@@ -62,7 +63,7 @@
 </head>
 
 <body>
-    <div class="title" >
+    <div class="title" onclick="back()">
         <img src="../image/art/back.png"  style="margin-top:10px;">
        미술전시
     </div> 
@@ -86,10 +87,17 @@
         <img src="../image/art/draw2.png" style="margin-top:10px;">
     </div>
     
-    <div class="go_live_btn">
+    <div class="go_live_btn" onclick="go_to_live()">
                 <img src="../image/art/gotolive.png"  >
         </div>
    
-    
+    <script>
+        function go_to_live(){
+            location.href="../page03_livestreet/";
+        }
+        function back(){
+            history.back(-1);
+        }
+    </script>
 </body>
 </html>
