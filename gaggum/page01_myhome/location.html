@@ -26,7 +26,7 @@
 
 </head>
 <body>
-
+    <div id="toast"></div>
     <div class="ticket-icon" style=" float: left;">
         <img src="../image/Ticket.png"> 
         <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
@@ -59,7 +59,7 @@
     <div class="art-block" onclick="locate_art();" >
         <img src="../image/myhome/artblock.png" alt="">
         </div>
-    <div class="music-block" onclick="locate_music();" >
+    <div class="music-block" onclick="ready_toast();" >
         <img src="../image/myhome/musicblock.png" alt="">
     </div>
         <div class="artist-home-block" onclick="locate_artist_home();" >
@@ -74,7 +74,7 @@
             location.href="";
         }
         function locate_artist_home(){
-            alert('예술인의 집은 아티스트의 작품을 전부 모아볼 수 있는 공간입니다. 죄송하지만, 현재 예술인의 집은 서비스 준비 중입니다! 조금만 기다려주세요♪');
+            toast("예술인의 집은 아티스트의 작품을 전부 모아볼 수 있는 공간으로, 서비스 준비 중입니다.");
         }
         function myhome_link(){
             location.href="index.php";
@@ -126,7 +126,25 @@
          }
         });
 
-      
+        function ready_toast(){
+        toast("서비스 준비 중입니다.")
+    }
+    let removeToast;
+
+
+function toast(string) {
+    const toast = document.getElementById("toast");
+
+    toast.classList.contains("reveal") ?
+        (clearTimeout(removeToast), removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 2000)) :
+        removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 2000)
+    toast.classList.add("reveal"),
+        toast.innerText = string
+}
 
 
     </script>

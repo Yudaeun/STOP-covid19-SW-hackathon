@@ -1,0 +1,99 @@
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.ticket-icon{
+    text-align: center;
+    left: 75%;
+    top: 50px;
+    position: fixed;
+    color: #fff;
+    z-index: 1;
+}
+
+.under-box{
+    text-align: center;
+    bottom: -0.5%;
+    position: fixed;
+}
+
+#all-btn{
+    text-align: center;
+    top: 85%;
+    position: fixed;
+    left: 0%;
+    z-index: 1;
+
+}
+#friend-btn{
+    text-align: center;
+    top: 85%;
+    position: fixed;
+    left: 16.9%;
+}
+#plus-btn{
+    text-align: center;
+    top: 88.4%;
+    position: fixed;
+    left: 46%;
+}
+#like-btn{
+    text-align: center;
+    top: 84.4%;
+    position: fixed;
+    right: 0%;
+}
+.chatting{
+    position: fixed; 
+    top: 93%; 
+    left: 10px; 
+    width: 250px; 
+    height: 35px;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    text-align: center;
+    outline:none;
+    background: linear-gradient( to bottom, rgb(255, 173, 173), rgb(255, 208, 186) );
+}
+#chatting-enter{
+    text-align: center;
+    top: 93.7%;
+    position: fixed;
+    left: 58%;
+    
+}
+#like-btn2{
+    text-align: center;
+    top: 92.4%;
+    position: fixed;
+    right: 16%;
+}
+#bookmark{
+    text-align: center;
+    top: 92.4%;
+    position: fixed;
+    right: 2%;
+}
+
+#toast {
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    padding: 15px 20px;
+    transform: translate(-50%, 10px);
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: .8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, transform .5s;
+    background: linear-gradient( to bottom, rgb(255, 173, 173,0.9), rgb(255, 208, 186) );
+
+    color: #fff;
+    z-index: 10000;
+}
+
+#toast.reveal {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0)
+}

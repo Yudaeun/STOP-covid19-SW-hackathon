@@ -2,7 +2,29 @@
     font-family: 'Nanum Gothic', sans-serif;
 }
 
+#toast {
+    position: fixed;
+    bottom: 350px;
+    left: 50%;
+    padding: 15px 20px;
+    transform: translate(-50%, 10px);
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: .8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s, transform .5s;
+    background: linear-gradient( to bottom, rgb(255, 173, 173,0.9), rgb(255, 208, 186) );
 
+    color: #fff;
+    z-index: 10000;
+}
+
+#toast.reveal {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0)
+}
 #total-menu-icon{
     text-align: center;
     top: 750px;
@@ -145,3 +167,4 @@
     position: fixed;
     display:flex;
 }
+

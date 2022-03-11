@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="streaming.css" rel="stylesheet" type="text/css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가꿈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gothic+A1&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<style>
+    body {
+    background-image: url('../image/streaming/background.png');
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+    <div class="ticket-icon" style=" float: left;">
+        <img src="../image/Ticket.png"> 
+        <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
+        <div style="float: right; left: 14px; position: fixed; top: 45px " onclick="back()">
+            <img src="../image/art/back.png" >
+           &nbsp;
+            <img src="../image/streaming/room_name.png" style="top: 42px; position: fixed; text-align: center;">
+        </div>
+        <div class="chat" style="top: 450px; position: fixed; text-align: center; left: 10px;">
+            <img src="../image/streaming/chat.png">
+        </div>
+        <div class="under-box">
+            <img src="../image/streaming/under_box.png">
+            <div id="all-btn">
+                <img src="../image/streaming/all button.png">
+            </div>
+            <div id="friend-btn">
+                <img src="../image/streaming/friend_button.png">
+            </div>
+            <div id="plus-btn">
+                <img src="../image/streaming/Add.png">
+            </div>
+            <div id="like-btn">
+                <img src="../image/streaming/like_display.png" id="like">
+            </div>
+    
+            <div contentEditable="true" class="chatting" onkeyup="if(window.event.keyCode==13){enter()}"><p style="top:778px; position: fixed; font-size: 14px;">　Type here...</p>
+                     
+                </div>
+               
+                
+            <div id="chatting-enter">
+                <img src="../image/streaming/mdi_send.png">
+            </div>
+            <div id="like-btn2" onclick="like()">
+                <img src="../image/streaming/like_button.png">
+            </div>
+            <div id="bookmark" onclick="bookmark()">
+                <img src="../image/streaming/ticket_button.png">
+            </div>
+        </div>
+
+        <div id="toast"></div>
+
+        <script>
+             function back(){
+            history.back(-1);
+        }
+        function enter() {
+        toast("현재 채팅 기능 서비스 준비 중입니다!");
+    }
+    function like(){
+        toast("작품에 하트를 주셨습니다.")
+        $(document).ready(function(){
+    	//이미지 변경 함수 호출
+    	changeIMG();
+    });
+    }
+    function bookmark(){
+        toast("작품을 북마크에 추가했습니다.")
+    }
+    let removeToast;
+
+function toast(string) {
+    const toast = document.getElementById("toast");
+
+    toast.classList.contains("reveal") ?
+        (clearTimeout(removeToast), removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 2000)) :
+        removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 2000)
+    toast.classList.add("reveal"),
+        toast.innerText = string
+}
+function changeIMG(){
+    	//이미지 변경
+    	$("#like").attr("src", "../image/streaming/likeaddButton.png");
+        
+    }
+
+        </script>
+</body>
+</html>

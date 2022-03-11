@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style>
     body {
     background-image: url('../image/myhome/myhome.svg');
@@ -22,6 +23,7 @@
 </style>
 </head>
 <body>
+<div id="toast"></div>
 <div class="menu-btn-modal" id="myhome-menu-icon">
     <img src="../image/myhome/menu_icon.png">
     </div>
@@ -45,7 +47,8 @@
 <div class="ticket-icon" style=" float: left;">
         <img src="../image/Ticket.png"> 
         <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
-
+    
+    
         <div class="modal">
             <div class="modal_body">
             <div class="close-area" id="x-icon">
@@ -53,13 +56,13 @@
             <div id="myhome-icon" onclick="myhome_link()">
             <img src="../image/myhome/Home.png">
             </div>
-            <div id="friend-icon" onclick="friend_link()">
+            <div id="friend-icon" onclick="ready_toast()">
             <img src="../image/myhome/friend.png">
             </div>
-            <div id="setting-icon" onclick="setting_link()">
+            <div id="setting-icon" onclick="ready_toast()">
             <img src="../image/myhome/setting.png">
             </div>
-            <div id="dm-icon" onclick="dm_link()">
+            <div id="dm-icon" onclick="ready_toast()">
             <img src="../image/myhome/DM.png">
             </div>
             <div id="art-btn" onclick="art_btn_link()">
@@ -71,10 +74,28 @@
     <div class="btn-open-modal" id="total-menu-icon" >
     <img src="../image/total_menu_icon.png" alt="">
     </div>
-    
-    
+
     
     <script>
+        function ready_toast(){
+        toast("서비스 준비 중입니다.")
+    }
+    let removeToast;
+
+
+function toast(string) {
+    const toast = document.getElementById("toast");
+
+    toast.classList.contains("reveal") ?
+        (clearTimeout(removeToast), removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 1500)) :
+        removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 1500)
+    toast.classList.add("reveal"),
+        toast.innerText = string
+}
         function chatting(){
             location.href="chatting.php";
         }
@@ -132,7 +153,7 @@
          }
         });
 
-
+        
     </script>
 </body>
 </html>

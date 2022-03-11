@@ -7,11 +7,12 @@
     <title>가꿈</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gothic+A1&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+
     <style>
         * {
-            font-family: 'Dongle', sans-serif;
-            font-size: 30px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 15px;
 }</style>
 </head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -48,7 +49,7 @@
 
 <body>
 <div class="chat_wrap">
-    <div class="header" style="font-size: 30px;">
+    <div class="header" style="font-size: 17px;">
        가꿈의 CHATTING
        <div id="x-icon" onclick="x_button()">
            <img src="../image/myhome/xicon.png">
