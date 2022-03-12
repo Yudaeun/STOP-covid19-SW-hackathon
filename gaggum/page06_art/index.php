@@ -23,7 +23,7 @@
             text-align:center;
             top:30px;
             margin-left:15px;
-            font-size: 25px;
+            font-size: 37px;
             position: fixed;
             color: #fff;
         }
@@ -31,19 +31,25 @@
             top:110px; 
             text-align: center;
             position: relative;
-            
         }
         .art_list{
             top:120px;
             position:relative;
             text-align: center;
             overflow:scroll;
-            height:400px;
+            height:460px;
         }
         .go_live_btn{
             top:700px;
             text-align: center;
             position:absolute;
+        }
+        .ticket-icon{
+            text-align: center;
+            left: 75%;
+            top: 50px;
+            position: fixed;
+            color: #fff;
         }
         input{
             width:330px;
@@ -67,7 +73,13 @@
         <img src="../image/art/back.png"  style="margin-top:10px;">
        미술전시
     </div> 
-
+    
+    <div class="ticket-icon" style=" float: left;">
+            <img src="../image/Ticket.png"> 
+            <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div>
+    
+    </div>
+    
     <div>
         <div class="btn">
             <input type="text" placeholder="공연을 검색해 보세요">
@@ -75,16 +87,16 @@
                     <img src="../image/art/hot_button.png"  style="margin-top:10px; padding-right:5px;">
                     <img src="../image/art/new_button.png"  style="margin-top:10px;">
             </div>
-            <img src="../image/art/tag.png" >
+            <img src="../image/art/tag.png" style="margin-top:10px;">
         </div>
     </div>
 
     
     <div class="art_list"> 
-        <img src="../image/art/draw1.png" style="margin-top:10px;">
-        <img src="../image/art/draw2.png" style="margin-top:10px;">
-        <img src="../image/art/draw1.png" style="margin-top:10px;">
-        <img src="../image/art/draw2.png" style="margin-top:10px;">
+        <img src="../image/art/draw1.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
+        <img src="../image/art/draw2.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
+        <img src="../image/art/draw1.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
+        <img src="../image/art/draw2.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
     </div>
     
     <div class="go_live_btn" onclick="go_to_live()">
