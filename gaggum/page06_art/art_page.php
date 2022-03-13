@@ -134,12 +134,34 @@
             position: fixed;
             
         }
-        
+        #toast {
+            position: fixed;
+            bottom: 350px;
+            left: 50%;
+            padding: 15px 20px;
+            transform: translate(-50%, 10px);
+            border-radius: 30px;
+            overflow: hidden;
+            font-size: .8rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s, visibility .5s, transform .5s;
+            background: linear-gradient( to bottom, rgb(255, 173, 173,0.9), rgb(255, 208, 186) );
+
+            color: #fff;
+            z-index: 10000;
+        }
+        #toast.reveal {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0)
+        }
     </style>
     
 </head>
 
 <body>
+    <div id="toast"></div>
     <div class="back_btn">
         <img src="../image/art/back.png"  style="margin-top:10px;" onClick="history.back();">
     
@@ -194,7 +216,7 @@
             <div id="setting-icon" onclick="setting_link()">
             <img src="../image/myhome/setting.png">
             </div>
-            <div id="dm-icon" onclick="dm_link()">
+            <div id="dm-icon" onclick="ready_toast()">
             <img src="../image/myhome/DM.png">
             </div>
             <div id="art-btn" onclick="art_btn_link()">
@@ -207,19 +229,15 @@
 
     <script>
         function myhome_link(){
-            //location.href="/";
             location.href="../page01_myhome/index.php";
         }
         function friend_link(){
-            //location.href="/";
-            location.reload();
+            location.href="../page05_ect/cummu.html";    
         }
         function setting_link(){
-            //location.href="/";
-            location.reload();
+            location.href="../page05_ect/setting.html";
         }
         function dm_link(){
-            //location.href="/";
             location.reload();
         }
         function art_btn_link(){
@@ -242,23 +260,22 @@
             modal.style.display = "none"
          }
         });
-
-        const menu_modal=document.querySelector(" .menu_modal");
-        const MenubtnPopup=document.querySelector(' .menu-btn-modal');
-        const myhome_chatting_icon=document.querySelector(' #myhome-chatting-icon');
-        MenubtnPopup.addEventListener('click',()=>{
-            menu_modal.style.display='block';
-            myhome_chatting_icon.style.display="none"
-        });
-        menu_modal.addEventListener("click", e => {
-        const evnTarget = e.target;
-        if(evnTarget.classList.contains("menu_modal")) {
-            menu_modal.style.display = "none"
-            myhome_chatting_icon.style.display="block"
-         }
-        });
-
-
+        function ready_toast(){
+            toast("서비스 준비 중입니다.");
+        }
+        let removeToast;
+        function toast(string) {
+            const toast = document.getElementById("toast");
+            toast.classList.contains("reveal") ?
+                (clearTimeout(removeToast), removeToast = setTimeout(function () {
+                    document.getElementById("toast").classList.remove("reveal")
+                }, 1500)) :
+                removeToast = setTimeout(function () {
+                    document.getElementById("toast").classList.remove("reveal")
+                }, 1500)
+            toast.classList.add("reveal"),
+                toast.innerText = string
+        }
     </script>
 </body>
 </html>

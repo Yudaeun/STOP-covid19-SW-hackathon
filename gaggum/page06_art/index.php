@@ -123,7 +123,7 @@
         <div class="btn">
             <input id="input" type="text" placeholder="공연을 검색해 보세요" onkeyup="if(window.event.keyCode==13){search();}">
             <div style="margin-right:175px;">
-                    <img class="hot" src="../image/art/hot_button.png"  style="margin-top:10px; padding-right:5px;">
+                    <img src="../image/art/hot_button.png"  style="margin-top:10px; padding-right:5px;">
                     <img src="../image/art/new_button.png"  style="margin-top:10px;">
             </div>
             <img src="../image/art/tag.png" style="margin-top:10px;">
@@ -201,12 +201,6 @@
         </div>
    
     <script>
-        
-           
-        
-        function test(h){
-            console.log("test");
-        }
         function go_to_live(){
             location.href="../page03_livestreet/";
         }
@@ -239,7 +233,6 @@
         for(j=0;j<like_btn.length;j++){
            like_btn[j].addEventListener("click",e=>{
                var src_add=e.target.src;
-               //console.log(typeof(src_add));
                if(src_add.indexOf("like_full.png")>-1){
                     e.target.src="../image/art/like_empty.png";
                }else if(src_add.indexOf("like_empty.png")>-1){
