@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="나만의 예술적 페르소나, 가꿈">
-    <meta property="og:image" content="../images/">
-    <meta property="og:description" content="어디서든지 내 입맛에 맞는 메뉴를">
     <title>가꿈</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +12,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <style>
+    .hidden {height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
     body {
     background-image: url('../image/myhome/myhome.svg');
     margin: auto;
+    height: 844px;
+    width: 390px;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 </style>
 </head>
-<body>
+<body  onload="loaded()" onkeydown="keydown()" onkeyup="keyup()">
+<canvas id="game-canvas" width="390" height="844"></canvas>
 <div id="toast"></div>
 <div class="menu-btn-modal" id="myhome-menu-icon">
     <img src="../image/myhome/menu_icon.png">
@@ -40,25 +41,15 @@
            <br>
            <br>&nbsp-
            <br><br>아바타<br><br>
-           <div style="color: #F9779D;">예술인의 집</div><br>
-          
-<div id="btnTwitter" class="link-icon twitter" onclick="shareTwitter();">
-    <img src="../image/myhome/icon-twitter.png">
-</div>
-<div id="btnFacebook" class="link-icon facebook" onclick="shareFacebook();">
-<img src="../image/myhome/icon-facebook.png">
-</div>    
-
-<div id="btnInsta" class="link-icon Insta" onclick="shareInsta()">
-<img src="../image/myhome/instagram.png">
-</div> 
-
+           <div style="color: #F9779D;">예술인의 집</div>
         </div>
         </div>
     </div>
+
     <div id="myhome-chatting-icon" onclick="chatting()">
     <img src="../image/myhome/chatting.png">
     </div>
+
 <div class="ticket-icon" style=" float: left;">
         <img src="../image/Ticket.png"> 
         <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
@@ -71,10 +62,10 @@
             <div id="myhome-icon" onclick="myhome_link()">
             <img src="../image/myhome/Home.png">
             </div>
-            <div id="friend-icon" onclick="friend_link()">
+            <div id="friend-icon" onclick="ready_toast()">
             <img src="../image/myhome/friend.png">
             </div>
-            <div id="setting-icon" onclick=" setting_link()">
+            <div id="setting-icon" onclick="ready_toast()">
             <img src="../image/myhome/setting.png">
             </div>
             <div id="dm-icon" onclick="ready_toast()">
@@ -89,17 +80,99 @@
     <div class="btn-open-modal" id="total-menu-icon" >
     <img src="../image/total_menu_icon.png" alt="">
     </div>
+
     
     <script>
-        function storage_link(){
+        //게임 함수
+
+       var canvas; //도화지 객체
+        var context; //화가 객체
+ 
+        // 플레이어 이동 방향과 속도
+        var dx=0;
+        var dy=0;
+ 
+        // 키 이벤트로 인해 인식된 keycode변수
+        var keycode;
+ 
+        var imgChar=new Image();
+        imgChar.src="../image/myhome/sticky_front.png";
+        var imgBg=new Image();
+        imgBg.src="../image/myhome/myhome.svg";
+
+        var x=200, y=250; //정 가운데로 위치
+        var w=40, h=40; //플레이어 이미지의 절반 사이즈
+
+  function loaded(){
+            canvas= document.getElementById('game-canvas');
+            context= canvas.getContext('2d');
+ 
+            runGame(); //게임을 진행하는 함수
+            //10ms 마다 runGame()를 다시 호출
+            setInterval(runGame,10); //1초에 100번 호출
+        }
+ 
+        function runGame(){
+            moveAll(); //캐릭터 움직이기
+            drawAll(); // 이미지들 그리기
+        }
+ 
+        function moveAll(){
+            //플레이어의 좌표 변경
+            x+=dx;
+            y+=dy;
+ 
+        }
+        function drawAll(){
+            //배경 그리기
+            context.drawImage(imgBg,0,0,390,844);
+            //플레이어 그리기
+            context.drawImage(imgChar,x-w,y-h,w*2,h*2);
+ 
+           
+        }
+ 
+        function keydown(){
+            //눌러진 key의 코드값
+            keycode=event.keyCode;
+            switch(keycode){
+                case 37: dx=-1; break; //left
+                case 38: dy=-1; break; //up
+                case 39: dx=1; break; //right
+                case 40: dy=1; break; //down
+            }
+        }
+        function keyup(){
+            //떨어진 key의 코드값
+            keycode=event.keyCode;
+            switch(keycode){
+                case 37: 
+                case 39: dx=0; break;
+                case 38:
+                case 40: dy=0; break;
+            }
+        }
+
+
+        function scrollDisable(){
+    $('html, body').addClass('hidden');
+}
+function scrollAble(){
+    $('html, body').removeClass('hidden');
+}
+//일반 함수
+function storage_link(){
     location.href="storage.html";
 }
         function ready_toast(){
         toast("서비스 준비 중입니다.")
     }
     let removeToast;
+
+
 function toast(string) {
     const toast = document.getElementById("toast");
+
     toast.classList.contains("reveal") ?
         (clearTimeout(removeToast), removeToast = setTimeout(function () {
             document.getElementById("toast").classList.remove("reveal")
@@ -110,19 +183,22 @@ function toast(string) {
     toast.classList.add("reveal"),
         toast.innerText = string
 }
+
         function chatting(){
-            location.href="chatting.html";
+            location.href="chatting.php";
         }
+
         function myhome_link(){
             location.href="index.php";
             //location.reload();
         }
         function friend_link(){
-            location.href="../page05_ect/cummu.html";           
+            //location.href="/";
+            location.reload();
         }
         function setting_link(){
-            location.href="../page05_ect/setting.html";
-            
+            //location.href="/";
+            location.reload();
         }
         function dm_link(){
             //location.href="/";
@@ -132,13 +208,13 @@ function toast(string) {
             location.href="location.html";
             //location.reload();
         }
-
-        //전체 메뉴 모달창
         const modal=document.querySelector(" .modal");
         const btnOpenPopup=document.querySelector(' .btn-open-modal');
+
         btnOpenPopup.addEventListener('click',()=>{
             modal.style.display='block';
         });
+
         const closeBtn = modal.querySelector(" .close-area");
         closeBtn.addEventListener("click", e => {
         modal.style.display = "none"
@@ -149,7 +225,7 @@ function toast(string) {
             modal.style.display = "none"
          }
         });
-        //마이홈 메뉴 모달창
+
         const menu_modal=document.querySelector(" .menu_modal");
         const MenubtnPopup=document.querySelector(' .menu-btn-modal');
         const myhome_chatting_icon=document.querySelector(' #myhome-chatting-icon');
@@ -164,40 +240,8 @@ function toast(string) {
             myhome_chatting_icon.style.display="block"
          }
         });
-        function shareTwitter() {
-    var sendText = "아티스트와 대중을 위한 메타버스 예술 활동 게임 플랫폼, 가꿈! 지금 바로 친구가 꾸민 마이홈을 구경하고, 작품도 보고, 수익까지!"; // 전달할 텍스트
-    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
-    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
-}
-function shareFacebook() {
-    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
-    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
-}
-/*
-function shareKakao() {
- 
- // 사용할 앱의 JavaScript 키 설정
- Kakao.init('3ac41c95173666a3b731f1c658519327');
 
- // 카카오링크 버튼 생성
- Kakao.Link.createDefaultButton({
-   container: '#btnKakao', // 카카오공유버튼ID
-   objectType: 'feed',
-   content: {
-     title: "개발새발", // 보여질 제목
-     description: "개발새발 블로그입니다", // 보여질 설명
-     imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
-     link: {
-        mobileWebUrl: "devpad.tistory.com/",
-        webUrl: "devpad.tistory.com/"
-     }
-   }
- });
-}
-*/
-function shareInsta(){
-location.href="https://www.instagram.com/";
-}
+        
     </script>
 </body>
 </html>

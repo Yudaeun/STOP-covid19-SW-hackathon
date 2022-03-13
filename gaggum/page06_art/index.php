@@ -239,7 +239,7 @@
         for(j=0;j<like_btn.length;j++){
            like_btn[j].addEventListener("click",e=>{
                var src_add=e.target.src;
-               console.log(typeof(src_add));
+               //console.log(typeof(src_add));
                if(src_add.indexOf("like_full.png")>-1){
                     e.target.src="../image/art/like_empty.png";
                }else if(src_add.indexOf("like_empty.png")>-1){

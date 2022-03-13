@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="../page01_myhome/myhome.css" rel="stylesheet" type="text/css" />
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
     <style>
         * {
             font-family: 'Nanum Gothic', sans-serif;
@@ -69,8 +70,8 @@
     </style>
 </head>
 
-<body>
-    
+<body on="detectBottom()">
+<div id="toast"></div>
         <div class="art">
             <img src="../image/art3/cover.png" width="396px">  
             
@@ -116,9 +117,43 @@
                 
                 </div> 
 
-                <div class="ticket-icon" style=" float: left;">
+                <div class="ticket-icon" style=" float: left;" onclick="point_toast();">
                         <img src="../image/Ticket.png"> 
                         <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div>
                 </div>
+
+                <script>
+                     function point_toast(){
+        toast("100 포인트가 적립되었습니다! 적립에는 최대 5분까지 소요될 수 있습니다.")
+    }
+    let removeToast;
+function toast(string) {
+    const toast = document.getElementById("toast");
+    toast.classList.contains("reveal") ?
+        (clearTimeout(removeToast), removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 2000)) :
+        removeToast = setTimeout(function () {
+            document.getElementById("toast").classList.remove("reveal")
+        }, 2000)
+    toast.classList.add("reveal"),
+        toast.innerText = string
+}
+var data=0;
+
+$(window).scroll(function(){ 
+    var scrT = $(window).scrollTop();
+  
+     //console.log(scrT); 
+     
+     if(scrT >= 513 && data==0){ 
+        point_toast();
+        data=1;
+    } else { 
+       
+     } })
+
+
+</script>
 </body>
 </html>

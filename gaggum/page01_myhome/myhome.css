@@ -168,3 +168,24 @@
     display:flex;
 }
 
+.link-icon { 
+    position: relative; 
+    display: inline-block; 
+    width: auto;   
+     font-size: 14px; 
+     font-weight: 500;
+      color: #333; 
+      margin-right: 10px; 
+      padding-top: 50px; 
+    }
+.link-icon.twitter { 
+    
+     background-repeat: no-repeat; 
+    }
+.link-icon.facebook { 
+
+    background-repeat: no-repeat; 
+} 
+.link-icon.Insta { 
+     background-repeat: no-repeat; 
+    }

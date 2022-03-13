@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="myhome.css" rel="stylesheet" type="text/css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가꿈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gothic+A1&family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+    
+    body {
+    background-image: url('../image/storage/Nebula.png');
+    margin: auto;
+    height: 844px;
+    width: 390px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+    <div style="float: right; left: 14px; position: fixed; top: 50px " onclick="back()">
+        <img src="../image/art/back.png">
+    </div>
+       
+<div class="ticket-icon" style=" float: left;">
+    <img src="../image/Ticket.png"> 
+    <div style="float: right; font-size: 18px;  color: #fff; margin-left: 2px;"> 380 </div></div>
+
+    <div class="storage-block" style="text-align: center ;
+    top: 15%;
+    left: 5%;
+    position: fixed;">
+  
+        <img src="../image/storage/storage_block.png"> 
+         <div style="text-align: center; top: 270px; left: 23px; position: fixed;" id="submit" onclick="calendar()">
+        <img src="../image/storage/Button.png">
+    </div>
+    <div style="text-align: center; top: 270px; left: 143px; position: fixed;" id="submit" onclick="calendar()">
+        <img src="../image/storage/Button.png">
+    </div>
+    </div>
+    <div class="modal">
+        <div class="modal_body">
+        <div class="close-area" id="x-icon">
+        <img src="../image/myhome/xicon.png">
+        <div id="myhome-icon" onclick="myhome_link()">
+        <img src="../image/myhome/Home.png">
+        </div>
+        <div id="friend-icon" onclick="ready_toast()">
+        <img src="../image/myhome/friend.png">
+        </div>
+        <div id="setting-icon" onclick="ready_toast()">
+        <img src="../image/myhome/setting.png">
+        </div>
+        <div id="dm-icon" onclick="ready_toast()">
+        <img src="../image/myhome/DM.png">
+        </div>
+        <div id="art-btn" onclick="art_btn_link()">
+        <img src="../image/myhome/art_btn.png">
+        </div>
+        </div>
+        </div>
+</div>
+<div class="btn-open-modal" id="total-menu-icon" >
+<img src="../image/total_menu_icon.png" alt="">
+</div>
+
+<script>
+
+   /*
+$(document).ready(function(){
+    $('#submit').click(function(){
+         $ajax({
+        type: 'POST',
+        url: "../index.php",
+        data: jarData,
+        dataType:'html',
+        success: function(data){
+            $('#message').html(data);
+        }
+    });
+});
+    });
+   */
+    
+    function calendar(){
+        location.href="calendar_index.html";
+    }
+     function back(){
+            history.back(-1);
+        }
+     function myhome_link(){
+            location.href="index.php";
+            //location.reload();
+        }
+        function friend_link(){
+            //location.href="/";
+            location.reload();
+        }
+        function setting_link(){
+            //location.href="/";
+            location.reload();
+        }
+        function dm_link(){
+            //location.href="/";
+            location.reload();
+        }
+        function art_btn_link(){
+            location.href="location.html";
+            //location.reload();
+        }
+        const modal=document.querySelector(" .modal");
+        const btnOpenPopup=document.querySelector(' .btn-open-modal');
+
+        btnOpenPopup.addEventListener('click',()=>{
+            modal.style.display='block';
+        });
+
+        const closeBtn = modal.querySelector(" .close-area");
+        closeBtn.addEventListener("click", e => {
+        modal.style.display = "none"
+        });
+        modal.addEventListener("click", e => {
+        const evTarget = e.target;
+        if(evTarget.classList.contains("modal")) {
+            modal.style.display = "none"
+         }
+        });
+</script>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</html>
