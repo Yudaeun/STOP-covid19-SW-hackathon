@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="나만의 예술적 페르소나, 가꿈">
-    <meta property="og:image" content="../images/">
-    <meta property="og:description" content="어디서든지 내 입맛에 맞는 메뉴를">
+    <meta property="og:title" content="가꿈">
+    <meta property="og:image" content="../image/Frame.png">
+    <meta property="og:description" content="나만의 예술적 페르소나를 찾아, 가꿈">
     <title>가꿈</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,7 +166,7 @@ function toast(string) {
         });
         function shareTwitter() {
     var sendText = "아티스트와 대중을 위한 메타버스 예술 활동 게임 플랫폼, 가꿈! 지금 바로 친구가 꾸민 마이홈을 구경하고, 작품도 보고, 수익까지!"; // 전달할 텍스트
-    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
+    var sendUrl = "http://rainysunnyday.dothome.co.kr/gaggum/"; // 전달할 URL
     window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
 }
 function shareFacebook() {
