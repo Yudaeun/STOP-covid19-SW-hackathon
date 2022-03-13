@@ -208,7 +208,7 @@
     <script>
         function myhome_link(){
             //location.href="/";
-            location.href="/page01_myhome";
+            location.href="../page01_myhome/index.php";
         }
         function friend_link(){
             //location.href="/";
@@ -223,8 +223,7 @@
             location.reload();
         }
         function art_btn_link(){
-            //location.href="/";
-            location.reload();
+            location.href="../page01_myhome/location.html";
         }
         const modal=document.querySelector(" .modal");
         const btnOpenPopup=document.querySelector(' .btn-open-modal');
