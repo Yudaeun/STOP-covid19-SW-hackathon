@@ -20,6 +20,13 @@
     z-index: 10000;
 }
 
+.storage-block{
+   
+    top: 15%;
+    left: 5%;
+    position: fixed;
+
+}
 #toast.reveal {
     opacity: 1;
     visibility: visible;

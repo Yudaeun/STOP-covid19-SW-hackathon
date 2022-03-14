@@ -170,7 +170,7 @@ function toast(string) {
     window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
 }
 function shareFacebook() {
-    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
+    var sendUrl = "http://rainysunnyday.dothome.co.kr/gaggum/"; // 전달할 URL
     window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
 }
 /*
