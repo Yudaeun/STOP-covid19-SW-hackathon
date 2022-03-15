@@ -37,7 +37,7 @@
             position:relative;
             text-align: center;
             overflow:scroll;
-            height:460px;
+            height:570px;
         }
         .art{
             margin:3px;
@@ -110,7 +110,7 @@
 <body>
     <div class="title" onclick="back()">
         <img src="../image/art/back.png"  style="margin-top:10px;">
-       미술전시
+       아트룸
     </div> 
     
     <div class="ticket-icon" style=" float: left;">
@@ -121,7 +121,7 @@
     
     <div>
         <div class="btn">
-            <input id="input" type="text" placeholder="공연을 검색해 보세요" onkeyup="if(window.event.keyCode==13){search();}">
+            <input id="input" type="text" placeholder="작품을 검색해 보세요" onkeyup="if(window.event.keyCode==13){search();}">
             <div style="margin-right:175px;">
                     <img src="../image/art/hot_button.png"  style="margin-top:10px; padding-right:5px;">
                     <img src="../image/art/new_button.png"  style="margin-top:10px;">
@@ -132,7 +132,8 @@
 
     
     <div class="art_list"> 
-        <div class="art">
+
+       <div class="art">
             <div class="art_image">
                 <img src="../image/art/draw_chicken.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
             </div>
@@ -145,37 +146,20 @@
                 <div class="art_description">미래를 지향하는 여성작가들이 그리는 신비로운 미술의 세계 현재 신사동 박박박 미술관에서 현장 전시 중</div>
                 <div class="tag">#박박박의_미술관 #미래 #유화</div>
             </div>
-           
-           
         </div>
-        
+
         <div class="art">
             <div class="art_image">
-                <img src="../image/art/draw_human.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
+                <img src="../image/art/sing_oldman.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
             </div>
             <div  class="like">
                 <img src="../image/art/like_empty.png" style="margin-top:10px;">
             </div>
             <div class="art_text">
-                <div class="art_title">봄이 오는 소리</div>
-                <div class="art_artist">김데이</div>
-                <div class="art_description">봄을 그린 작품들을 소개합니다.</div>
-                <div class="tag">#봄 #자연 #디지털아트</div>
-            </div>
-        </div>
-        
-        <div class="art">
-            <div class="art_image">
-                <img src="../image/art/draw_chicken.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
-            </div>
-            <div  class="like">
-                <img src="../image/art/like_empty.png" style="margin-top:10px;">
-            </div>
-            <div class="art_text">
-                <div class="art_title">박박박의 미술관 특별 전시</div>
-                <div class="art_artist">박박 외 4명</div>
-                <div class="art_description">미래를 지향하는 여성작가들이 그리는 신비로운 미술의 세계 현재 신사동 박박박 미술관에서 현장 전시 중</div>
-                <div class="tag">#박박박의_미술관 #미래 #유화</div>
+                <div class="art_title">어쿠스틱 영화음악 듣고 가세요</div>
+                <div class="art_artist">투투, 나나</div>
+                <div class="art_description">요즘 유행하는 영화부터 누구나 다 알고 있는 유명작까지, 어쿠스틱으로 들려드립니다.</div>
+                <div class="tag">#기타 #어쿠스틱 #영화</div>
             </div>
         </div>
         
@@ -193,17 +177,29 @@
                 <div class="tag">#봄 #자연 #디지털아트</div>
             </div>
         </div>
+
+        <div class="art">
+            <div class="art_image">
+                <img src="../image/art/sing_man.png" style="margin-top:10px;" onClick="location.href='art_page.php'">
+            </div>
+            <div  class="like">
+                <img src="../image/art/like_empty.png" style="margin-top:10px;">
+            </div>
+            <div class="art_text">
+                <div class="art_title">싱잉 라디오</div>
+                <div class="art_artist">라라라라</div>
+                <div class="art_description">노래 몇 곡에, 저의 이야기를 넣었습니다.</div>
+                <div class="tag">#토크 #노래 #라라라라</div>
+            </div>
+        </div>
+
+       
+        
         
     </div>
     
-    <div class="go_live_btn" onclick="go_to_live()">
-                <img src="../image/art/gotolive.png"  >
-        </div>
-   
     <script>
-        function go_to_live(){
-            location.href="../page03_livestreet/";
-        }
+        
         function back(){
             history.back(-1);
         }
