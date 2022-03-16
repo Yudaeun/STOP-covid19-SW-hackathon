@@ -41,11 +41,22 @@
            <br>
            <br>&nbsp-
            <br><br>아바타<br><br>
-           <div style="color: #F9779D;">예술인의 집</div>
+           <div style="color: #F9779D;">예술인의 집</div><br>
+          
+<div id="btnTwitter" class="link-icon twitter" onclick="shareTwitter();">
+    <img src="../image/myhome/icon-twitter.png">
+</div>
+<div id="btnFacebook" class="link-icon facebook" onclick="shareFacebook();">
+<img src="../image/myhome/icon-facebook.png">
+</div>    
+
+<div id="btnInsta" class="link-icon Insta" onclick="shareInsta()">
+<img src="../image/myhome/instagram.png">
+</div> 
+
         </div>
         </div>
     </div>
-
     <div id="myhome-chatting-icon" onclick="chatting()">
     <img src="../image/myhome/chatting.png">
     </div>
@@ -240,7 +251,40 @@ function toast(string) {
             myhome_chatting_icon.style.display="block"
          }
         });
+        function shareTwitter() {
+    var sendText = "아티스트와 대중을 위한 메타버스 예술 활동 게임 플랫폼, 가꿈! 지금 바로 친구가 꾸민 마이홈을 구경하고, 작품도 보고, 수익까지!"; // 전달할 텍스트
+    var sendUrl = "http://rainysunnyday.dothome.co.kr/gaggum/"; // 전달할 URL
+    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+function shareFacebook() {
+    var sendUrl = "http://rainysunnyday.dothome.co.kr/gaggum/"; // 전달할 URL
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
+/*
+function shareKakao() {
+ 
+ // 사용할 앱의 JavaScript 키 설정
+ Kakao.init('3ac41c95173666a3b731f1c658519327');
 
+ // 카카오링크 버튼 생성
+ Kakao.Link.createDefaultButton({
+   container: '#btnKakao', // 카카오공유버튼ID
+   objectType: 'feed',
+   content: {
+     title: "개발새발", // 보여질 제목
+     description: "개발새발 블로그입니다", // 보여질 설명
+     imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
+     link: {
+        mobileWebUrl: "devpad.tistory.com/",
+        webUrl: "devpad.tistory.com/"
+     }
+   }
+ });
+}
+*/
+function shareInsta(){
+location.href="https://www.instagram.com/";
+}
         
     </script>
 </body>
