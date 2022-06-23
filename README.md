@@ -1,6 +1,5 @@
 # Stop Covid-19 SW Challenge 아이디어 해커톤
 
----
 
 > **아티스트와 대중을 위한 메타버스 예술 활동 게임 플랫폼, 가꿈**
 > 
@@ -12,9 +11,9 @@
 - 미술, 음악 등의 작품 활동을 하는 예술인들이 자유롭게 본인의 작품을 올릴 수 있습니다.
 - 문화예술 활동 이외에, 비대면이라는 공간적인 벽을 해소시켜 줄 아바타 및 마이홈 게임 서비스를 예술 활동을 통해 얻는 포인트와 함께 제공합니다.
 
-## 🐻프로토 타입 개발(2022.03.9~03.16)
+## 🐻프로토타입 개발(2022.03.9~03.16)
 
----
+
 
 > 아이디어 해커톤을 진행하며, 저희가 개발한 부분은 Front-End입니다.  일주일이라는 짧은 기간 안에 아이디어 보완과 개발, 발표를 함께 진행해야 해서, 외적으로 보여지는 동작이나 화면 구성을 우선으로 프로토타입을 개발했습니다.
 > 
@@ -26,22 +25,24 @@
 > 
 
 > 🔗본선 발표 PDF: [https://drive.google.com/file/d/1U74OVPU2R8aBwIv6IuhF3lICl7HoR_vp/view?usp=sharing](https://drive.google.com/file/d/1U74OVPU2R8aBwIv6IuhF3lICl7HoR_vp/view?usp=sharing)
-> 
+
+> 🔗프로토타입 영상(4분): [https://drive.google.com/file/d/1kaUb6V7NGxBPWXIbPnr6Vq5Sx0SFNWNl/view?usp=sharing](https://drive.google.com/file/d/1kaUb6V7NGxBPWXIbPnr6Vq5Sx0SFNWNl/view?usp=sharing)
+>
 
  
 
 ## 🐻팀원
 
----
+
 
 | 유다은 | 팀장, 개발, 기획 |
-| --- | --- |
+| ---- | ---- |
 | 김도연 | 발표, 개발, 기획 서포트 |
 | 곽배희 | 기획, 디자인, 시장조사 |
 
 ## 🐻개발환경
 
----
+
 
 - VS Code
 - Apache
@@ -50,7 +51,7 @@
 
 ## 🐻개발언어
 
----
+
 
 - HTML
 - JavaScript
@@ -58,7 +59,7 @@
 
 ## 🐻Meaning
 
----
+
 
 코로나19 시대에 트렌드가 될 수 있을 만한 것이 무엇일까, 우리가 소비자 입장이 되었을 때 평소에 어떤 점이 불편했고 어떤 면에서 이런 컨텐츠를 사용할 수 있을까를 끊임없이 고민했습니다. 작은 것부터 시작해서 프로토타입 개발에 이르기까지, 더 넓은 시각으로 세상을 바라볼 수 있는 계기가 되었습니다. 
 
